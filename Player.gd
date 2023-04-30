@@ -44,7 +44,6 @@ func _physics_process(delta):
 		if stunTime <= 0:
 			stunned = false
 		else:
-			print(velocity.y)
 			velocity.y += Global.GRAVITY * delta
 			velocity = move_and_slide(velocity, Vector2(0, -1))
 

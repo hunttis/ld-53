@@ -42,10 +42,7 @@ func _physics_process(delta):
 	
 	var playerInFront = sign((player.position - self.position).x) == direction
 
-	if name == "SpecialDrone":
-		print("PlayerPos: ", player.position.distance_to(self.position), " -> Player In Front: " + str(playerInFront))
 	if player.position.distance_to(self.position) < detect_range && playerInFront:
-		print("DETECTING PLAYER")
 		towards_player.cast_to = player.position - self.position
 		towards_player.enabled = true
 		if towards_player.get_collider() == player:

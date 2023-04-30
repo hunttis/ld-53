@@ -55,8 +55,7 @@ func _physics_process(delta):
 			if sprite.animation != "firing":
 				sprite.animation = "firing"
 				sprite.frame = 0
-				print("Setting firing-animation")
-			
+				
 			if firing_cooldown > FIRING_COOLDOWN_MAX / 4 * 3:
 				sprite.frame = 1
 			elif firing_cooldown > FIRING_COOLDOWN_MAX / 4 * 2:
@@ -79,7 +78,7 @@ func _physics_process(delta):
 		
 		
 	if !moving && on_ground.is_colliding() && !can_see_player:
-#		print("Choosing direction")
+
 		moving = true
 		direction = -direction
 
@@ -132,7 +131,7 @@ func hit_by_star():
 
 func _stomp_occured(location: Vector2):
 	var stompDistance = location.distance_to(position)
-	print("Stomp occured at distance of ", stompDistance)
+
 	if stompDistance < 100:
 		stunned = true
 		stunTime = 1

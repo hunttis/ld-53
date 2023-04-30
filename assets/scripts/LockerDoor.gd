@@ -9,6 +9,6 @@ func _ready():
 
 func _on_switch_pressed(switch_number):
 	if switch_number == attached_to_switch:
-		print("OPENED SWITCH: ", switch_number)
+
 		Global.make_explosion_signal(position)
 		queue_free()

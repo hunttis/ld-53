@@ -10,7 +10,7 @@ func _ready():
 	player = get_parent().get_parent().get_node("Player")
 	self.material.set_shader_param("scroll_speed", scroll_speed)
 	yOffset = rect_position.y
-	print(name, " ", camera, " ", yOffset)
+
 
 func _process(delta):
 	self.material.set_shader_param("scroll_speed", scroll_speed)
