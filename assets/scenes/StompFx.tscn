@@ -1,0 +1,103 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/images/Particles.png" type="Texture" id=1]
+[ext_resource path="res://assets/scripts/RemoveWhenDone.gd" type="Script" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 64, 16, 16 )
+
+[sub_resource type="Gradient" id=2]
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( -3, 192, 16, 16 )
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.783251, 0.90991 ), -1.46306, -1.46306, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 80, 16, 16 )
+
+[sub_resource type="Curve" id=6]
+_data = [ Vector2( 0, 0.969628 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0597183 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=7]
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[node name="StompFx" type="CPUParticles2D"]
+emitting = false
+amount = 50
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+texture = SubResource( 1 )
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector2( 0, -1 )
+spread = 86.66
+gravity = Vector2( 0, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+damping = 163.9
+scale_amount = 0.25
+scale_amount_random = 1.0
+color_ramp = SubResource( 2 )
+script = ExtResource( 2 )
+
+[node name="Dirt" type="CPUParticles2D" parent="."]
+z_index = -1
+emitting = false
+amount = 30
+lifetime = 0.75
+one_shot = true
+explosiveness = 1.0
+texture = SubResource( 3 )
+emission_shape = 1
+emission_sphere_radius = 3.2
+direction = Vector2( 0, -1 )
+spread = 90.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+damping = 80.9
+scale_amount_curve = SubResource( 4 )
+script = ExtResource( 2 )
+
+[node name="FireRight" type="CPUParticles2D" parent="."]
+position = Vector2( 0, -2.282 )
+z_index = -1
+emitting = false
+amount = 30
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.74
+randomness = 1.0
+lifetime_randomness = 0.66
+texture = SubResource( 5 )
+emission_shape = 4
+emission_points = PoolVector2Array( 0, 0, 0, 0 )
+emission_normals = PoolVector2Array( 1, 0, -1, 0 )
+emission_colors = PoolColorArray(  )
+spread = 16.42
+gravity = Vector2( 0, -10 )
+initial_velocity = 200.0
+initial_velocity_random = 1.0
+damping = 418.58
+scale_amount_curve = SubResource( 6 )
+color_ramp = SubResource( 7 )
+script = ExtResource( 2 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 100
+one_shot = true
+explosiveness = 1.0
+direction = Vector2( 1, 1 )
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 100.0
+damping = 100.0
+script = ExtResource( 2 )
