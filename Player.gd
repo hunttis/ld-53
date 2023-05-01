@@ -63,6 +63,9 @@ func _physics_process(delta):
 	
 	if grabbing && !wallGrabRay.is_colliding():
 		grabbing = false
+		
+	if Input.is_key_pressed(KEY_R):
+		get_tree().reload_current_scene()
 
 	if Input.is_action_pressed("ui_left"):
 		if wallGrabRay.is_colliding():

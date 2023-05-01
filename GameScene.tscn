@@ -616,7 +616,7 @@ margin_right = 716.0
 margin_bottom = 450.0
 rect_scale = Vector2( 3, 3 )
 text = "OH NO! GAME OVER!
-Refresh the page to try again."
+Press 'R' to restart."
 
 [node name="Lights" type="Node2D" parent="."]
 
